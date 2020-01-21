@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Gelasio&display=swap" rel="stylesheet">
+    <style>
+        html {
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+        }
+        body{
+            font-family: 'Gelasio', Serif;
+            text-align: center;
+        }
+        img{
+            height: 300px;
+            width: 300px;
+            border: 0px;
+        }
+        #pics{
+            width: 900px;
+            height: 900px;
+            border: solid 1px black;
+            font-size: 0px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>MonkeyShuffle</h1>
+<div id="pics">
+    <img src="aap1.jpg">
+    <img src="aap2.jpg">
+    <img src="aap3.jfif">
+    <img src="aap4.jpg">
+    <img src="aap5.jpg">
+    <img src="aap6.jpg">
+    <img src="aap7.jpg">
+    <img src="aap8.jpg">
+    <img src="aap9.jfif">
+</div>
+<script src="h3-2.js"></script>
+<script>
+    var plaatjes = document.getElementsByTagName("img");
+    var random = 0;
+
+    var randomNumbers = [];
+
+    while(randomNumbers.length < 9){
+        random = Math.floor(Math.random() *9) +1;
+        if(randomNumbers.lastIndexOf(random)== -1)
+        {
+            randomNumbers.push(random);
+        }
+    }
+
+    random = 0;
+    for(var plaatje in plaatjes) {
+        plaatjes[plaatje].src = "aap" + randomNumbers[random] + ".jpg";
+        random++;
+    }
+</script>
+</body>
+</html>
